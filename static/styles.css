@@ -1,0 +1,418 @@
+.div1 {
+  background: url(/static/Bond_blur.jpg) no-repeat center;
+  background-size: auto;
+  background-size: cover;
+  height: 800px;
+}
+
+.div2 {
+  border: 10px solid white;
+  background: url(/static/Neuschwanstein.jpg) no-repeat center;
+  background-size: cover;
+  height: 900px;
+  position: relative;
+}
+
+.div3 {
+  border: 10px solid white;
+  background: url(/static/Carpathian.jpg) no-repeat center;
+  background-size: cover;
+  height: 900px;
+  position: relative;
+}
+
+.div4 {
+  border: 10px solid white;
+  background: url(/static/Carpathian.jpg) no-repeat center;
+  background-size: cover;
+  height: 500px;
+  position: relative;
+  filter: grayscale(40%);
+  contrast: (200%);
+}
+
+.div5 {
+  border: 10px solid white;
+  background: url(/static/Neuschwanstein.jpg) no-repeat center;
+  background-size: cover;
+  height: 500px;
+  position: relative;
+  filter: grayscale(40%);
+  contrast: (200%);
+}
+.div6 {
+  border: 10px solid white;
+  background: url(/static/Schilthorn4.jpg) no-repeat center;
+  background-size: cover;
+  height: 500px;
+  position: relative;
+  filter: grayscale(40%);
+  contrast: (200%);
+}
+
+body {
+  /*margin: 0;*/
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+  background-color: white;
+  position: fixed;
+  top: -50px;
+  width: 100%;
+  display: block;
+  z-index: 1
+}
+
+#navbar-right {
+  float: right;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #cbc2bb;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: large;
+}
+
+#navbar a:hover {
+  background-color: #322214;
+  color: white;
+}
+
+#logo {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+#navbar_front {
+  position: fixed;
+  width: 100%;
+  display: block;
+  z-index: 1
+}
+
+#navbar_front a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: small;
+}
+
+#navbar_front-right {
+  float: right;
+}
+
+#navbar_front a:hover {
+  background-color: #322214;
+  color: white;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: small;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 15px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.dropbtn_large {
+  font-size: large;
+  border: none;
+  outline: none;
+  color: #cbc2bb;
+  padding: 12px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropbtn_large:hover {
+  background-color: #322214;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #322214;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: transparent;
+  min-width: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: small;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color:  transparent;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  background-color:  transparent;
+}
+
+.fa {
+  font-size: large;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.fa-instagram {
+  color: white;
+}
+
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  z-index:99;
+  background-color: transparent;
+  border: solid;
+  border-color: #cbc2bb;
+  border-width: 0 10px 10px 0;
+  padding: 10px;
+  -webkit-transform: rotate(-135deg);
+  outline: none;
+
+}
+
+#myBtn:hover {
+  border: solid;
+  border-color: #322214;
+  border-width: 0 10px 10px 0;
+  outline: none;
+}
+
+#button {
+  bottom: 20px;
+  right: 20px;
+  z-index:99;
+  font-size: calc(var(--scale, 1) * .9rem);
+  border: none;
+  outline: none;
+  background-color: Transparent;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  text-decoration: none;
+}
+
+#button:hover {
+  background-color: #555;
+}
+
+* {box-sizing: border-box}
+.mySlides1, .mySlides2, mySlides3 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1200px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.button-on-slides {
+  text-align: center;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.column-66 {
+  float: left;
+  width: 70%;
+  padding: 10px;
+}
+
+.column-33 {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+.large-font {
+  font-size: 32px;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .column-66,
+  .column-33 {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    margin: auto;
+  }
+}
+
+.centered {
+  position: fixed;
+  top: 20%;
+  left: 30%;
+
+}
+
+.contact form {
+    margin-top: 0px;
+    padding: 0px 30px;
+}
+.contact h3 {
+    color: #488ace;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.contact p {
+    margin: 0 0px 10px;
+    margin-left: 0px!important;
+}
+.contact label {
+    display: none;
+}
+.contact input {
+   width: 100%;
+    border: none;
+    border: 1px solid #dddddd78;
+    padding: 10px;
+    border-radius: 4px;
+}
+.contact textarea#message {
+    width: 100%;
+    height: 122px;
+    border: 1px solid #dddddd78;
+    border-radius: 4px;
+    padding: 10px;
+}
+.contact input#submit {
+    color: white;
+    background: linear-gradient(0.25turn,#2a78ca, #71a1d4);
+    float: right;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 23px;
+    /* margin-right: 10px; */
+    box-shadow: 0px 0px 4px 0px #00000087;
+    margin-top: 15px;
+}

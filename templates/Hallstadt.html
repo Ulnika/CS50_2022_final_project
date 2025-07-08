@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Hallstadt
+{% endblock %}
+
+{% block main %}
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.Hallstadt {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.Hallstadt:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 120; /* Sit on top */
+  padding-top: 0px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1080px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
+
+
+<!-- Header -->
+<div class="header">
+  <h1>Hallstadt, photo gallery</h1>
+
+  <p></p>
+</div>
+
+<!-- Photo Grid -->
+<div class="row">
+  <div class="column">
+    <img class="Hallstadt" id="myImg_1" src="/static/Hallstadt1.jpg" alt="Hallstätter See" style="width:100%">
+
+
+    <img class="Hallstadt" id="myImg_2" src="/static/Hallstadt2.jpg" style="width:100%">
+    <img class="Hallstadt" id="myImg_3" src="/static/Hallstadt3.jpg" style="width:100%">
+    <img class="Hallstadt" id="myImg_4" src="/static/Hallstadt4.jpg" style="width:100%">
+    <img class="Hallstadt" id="myImg_5" src="/static/Hallstadt5.jpg" style="width:100%">
+    <img class="Hallstadt" id="myImg_6" src="/static/Hallstadt3.jpg" style="width:100%">
+
+  </div>
+  <div class="column">
+    <img class="Hallstadt" id="myImg_7" src="/static/Hallstadt6.jpg" style="width:100%">
+    <img class="Hallstadt" id="myImg_8" src="/static/Hallstadt7.jpg" style="width:100%">
+    <img class="Hallstadt" id="myImg_9" src="/static/Hallstadt8.jpg" style="width:100%">
+    <img class="Hallstadt" id="myImg_10" src="/static/Hallstadt9.jpg" style="width:100%">
+    <img class="Hallstadt" id="myImg_11" src="/static/Hallstadt11.jpg" style="width:100%">
+
+  </div>
+
+   <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
+
+</div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+for (var i=1; i<=11;i++ ){
+  var img = document.getElementById("myImg_" + i);
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+}
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+
+
+
+{% endblock %}

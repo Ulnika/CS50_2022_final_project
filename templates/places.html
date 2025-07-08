@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    places
+{% endblock %}
+
+{% block main %}
+
+    <div class="slideshow-container">
+        <div class="mySlides1">
+            <img src="/static/Hallstadt3.jpg" style="width:100%">
+            <div class="button-on-slides">
+                <a href="/Hallstadt" id="button" title="go">Hallstadt, Austria</a>
+            </div>
+        </div>
+
+        <div class="mySlides1">
+            <img src="/static/Hallstadt2.jpg" style="width:100%">
+            <div class="button-on-slides">
+                <a href="/Hallstadt" id="button" title="go">Hallstadt, Austria</a>
+            </div>
+        </div>
+
+        <div class="mySlides1">
+            <img src="/static/Hallstadt1.jpg" style="width:100%">
+            <div class="button-on-slides">
+                <a href="/Hallstadt" id="button" title="go">Hallstadt, Austria</a>
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+
+    </div>
+
+    <br>
+
+    <div class="slideshow-container">
+        <div class="mySlides2">
+            <img src="/static/Carpathian1.jpg" style="width:100%">
+            <div class="button-on-slides">
+                <a href="/Carpathian" id="button" title="go">Carpathians, Ukraine</a>
+            </div>
+        </div>
+
+        <div class="mySlides2">
+            <img src="/static/Carpathian2.jpg" style="width:100%">
+            <div class="button-on-slides">
+                <a href="/Carpathian" id="button" title="go">Carpathians, Ukraine</a>
+            </div>
+        </div>
+
+        <div class="mySlides2">
+            <img src="/static/Carpathian3.jpg" style="width:100%">
+            <div class="button-on-slides">
+                <a href="/Carpathian" id="button" title="go">Carpathians, Ukraine</a>
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+
+    </div>
+
+    <br>
+
+    <div class="slideshow-container">
+        <div class="mySlides3">
+            <img src="/static/Schilthorn1.jpg" style="width:100%">
+            <div class="button-on-slides">
+                <a href="/Schilthorn" id="button" title="go">Schilthorn, Switzerland</a>
+            </div>
+        </div>
+
+        <div class="mySlides3">
+            <img src="/static/Schilthorn2.jpg" style="width:100%">
+            <div class="button-on-slides">
+                <a href="/Schilthorn" id="button" title="go">Schilthorn, Switzerland</a>
+            </div>
+        </div>
+
+        <div class="mySlides3">
+            <img src="/static/Schilthorn3.jpg" style="width:100%">
+            <div class="button-on-slides">
+                <a href="/Schilthorn" id="button" title="go">Schilthorn, Switzerland</a>
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+
+    </div>
+
+<script>
+
+var slideIndex = [1,2];
+var slideId = ["mySlides1", "mySlides2", "mySlides3"]
+showSlides(1, 0);
+showSlides(1, 1);
+showSlides(1, 2);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function currentSlide(n, no) {
+  showSlides(slideIndex[no] = n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 2) {slideIndex[no] = x.length}
+
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+
+  x[slideIndex[no]-1].style.display = "block";
+}
+
+
+</script>
+{% endblock %}
